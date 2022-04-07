@@ -43,7 +43,15 @@ export default {
         this.$emit('input', status)
         this.$toast.success(status === 1 ? '点赞成功' : '取消点赞')
       } catch (err) {
-        this.$toast('操作失败，请重试')
+        // console.log(err)
+        console.log(err)
+        // 判断是否是登录失效
+        if (err.response.status === 401) {
+          this.$toast.fail('登录失效，请重新登录')
+          this.$router.push('/login')
+        } else {
+          this.$toast.fail('点赞失败')
+        }
       }
       this.loading = false
     }

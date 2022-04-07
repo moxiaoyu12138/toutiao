@@ -58,7 +58,13 @@ export default {
         this.$emit('post-success', data.data)
         this.$toast.success('发布成功')
       } catch (err) {
-        this.$toast('发布失败，请重试')
+        // 判断登录状态
+        if (err.response.status === 401) {
+          this.$toast.fail('请先登录')
+          this.$router.push('/login')
+        } else {
+          this.$toast.fail('发布失败')
+        }
       }
     }
   }

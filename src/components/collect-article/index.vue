@@ -40,7 +40,13 @@ export default {
         this.$emit('input', !this.value)
         this.$toast.success(!this.value ? '收藏成功' : '取消收藏')
       } catch (err) {
-        this.$toast('操作失败，请重试')
+        // 判断是否是登录失效
+        if (err.response.status === 401) {
+          this.$toast.fail('登录失效，请重新登录')
+          this.$router.push('/login')
+        } else {
+          this.$toast.fail('收藏失败')
+        }
       }
 
       this.loading = false

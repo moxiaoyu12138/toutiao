@@ -55,7 +55,11 @@ export default {
         this.$emit('update-is_followed', !this.isFollowed)
       } catch (err) {
         const message = '操作失败，请稍后重试'
-        if (err.response && err.response.status === 400) {
+        if (err.response.status === 401) {
+          this.$toast.fail('登录失效，请重新登录')
+          this.$router.push('/login')
+          return
+        } else if (err.response && err.response.status === 400) {
           // eslint-disable-next-line no-const-assign
           message = '你不能关注你自己'
         }
