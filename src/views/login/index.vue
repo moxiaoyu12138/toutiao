@@ -54,6 +54,8 @@
   </van-form>
 
     <!-- 登录表单 -->
+     <van-cell title="测试账号：13811111111 密码：246810" style="background-color:#ff9d1d;"/>
+
   </div>
 
 </template>

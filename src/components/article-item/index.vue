@@ -27,7 +27,7 @@
               </div>
           </div>
           <div class="label-badge-wrap">
-              <span>{{article.aut_name}}</span>
+              <span>小雨科技</span>
               <span>{{article.comm_count}}评论</span>
               <span>{{article.pubdate | relativeTime}}</span>
           </div>

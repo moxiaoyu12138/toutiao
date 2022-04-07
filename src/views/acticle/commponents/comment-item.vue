@@ -5,10 +5,10 @@
       class="avatar"
       round
       fit="cover"
-      :src="comment.aut_photo"
+      src="http://xiaoyuaichitang.xyz/view.php/3539b65aa04b21b96b6124357cf75877.jpg"
     />
     <div slot="title" class="title-wrap">
-      <div class="user-name">{{comment.aut_name}}</div>
+      <div class="user-name">小雨科技</div>
       <van-button
         class="like-btn"
         :class="{
@@ -57,6 +57,8 @@ export default {
   methods: {
     async onCommentLike () {
       this.commentLoading = true
+      this.comment.aut_photo = 'http://xiaoyuaichitang.xyz/view.php/3539b65aa04b21b96b6124357cf75877.jpg'
+
       try {
         if (this.comment.is_liking) {
           await deleteCommentLike(this.comment.com_id)

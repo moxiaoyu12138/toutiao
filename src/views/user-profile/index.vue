@@ -129,6 +129,7 @@ export default {
       try {
         const { data } = await getUserProfile()
         this.user = data.data
+        this.user.photo = 'http://xiaoyuaichitang.xyz/view.php/3539b65aa04b21b96b6124357cf75877.jpg'
       } catch (err) {
         this.$toast('加载失败，请稍后重试')
       }

@@ -10,7 +10,7 @@
             fit="cover"
             :src="userInfo.photo"
           />
-          <span class="name">{{userInfo.name}}</span>
+          <span class="name">小雨科技</span>
         </div>
         <div class="right">
           <van-button
@@ -110,6 +110,7 @@ export default {
       try {
         const { data } = await getUserInfo()
         this.userInfo = data.data
+        this.userInfo.photo = 'http://xiaoyuaichitang.xyz/view.php/3539b65aa04b21b96b6124357cf75877.jpg'
       } catch (err) {
         this.$toast('获取数据失败,请稍后重试')
       }

@@ -4,7 +4,7 @@
     <van-nav-bar
       class="page-nav-bar"
       left-arrow
-      title="黑马头条"
+      title="小雨科技"
       @click-left="$router.back()"
     ></van-nav-bar>
     <!-- /导航栏 -->
@@ -34,7 +34,7 @@
             fit="cover"
             :src="article.aut_photo"
           />
-          <div slot="title" class="user-name">{{article.aut_name}}</div>
+          <div slot="title" class="user-name">小雨科技</div>
           <div slot="label" class="publish-date">{{article.pubdate | relativeTime}}</div>
           <Follow-User
             class="follow-btn"
@@ -236,6 +236,7 @@ export default {
     },
     previewImage () {
       // 获取img节点
+      this.article.aut_photo = 'http://xiaoyuaichitang.xyz/view.php/3539b65aa04b21b96b6124357cf75877.jpg'
       const articleContent = this.$refs['article-content']
       const imgs = articleContent.querySelectorAll('img')
       // console.log(imgs)

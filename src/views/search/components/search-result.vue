@@ -9,10 +9,19 @@
         @load="onLoad"
       >
     <van-cell
-      v-for="(article, index) in list"
-      :key="index"
-      :title="article.title"
-    />
+        v-for="(article, index) in list"
+        :key="index"
+        :title="article.title"
+        :to="{
+           // 根据路由名称进行跳转
+          name: 'article',
+          // 传递路由动态参数
+          params: {
+            // 属性名：路由路径中设计的动态参数名称
+            articleId: article.art_id
+          }
+        }"
+      />
   </van-list>
   </div>
 </template>
