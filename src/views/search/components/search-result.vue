@@ -13,9 +13,7 @@
         :key="index"
         :title="article.title"
         :to="{
-           // 根据路由名称进行跳转
-          name: 'article',
-          // 传递路由动态参数
+          name: 'acticle',
           params: {
             // 属性名：路由路径中设计的动态参数名称
             articleId: article.art_id
@@ -50,7 +48,8 @@ export default {
   },
   computed: {},
   watch: {},
-  created () {},
+  created () {
+  },
   mounted () {},
   methods: {
     async onLoad () {
@@ -83,6 +82,7 @@ export default {
         this.loading = false
       }
     }
+
   }
 }
 </script>
